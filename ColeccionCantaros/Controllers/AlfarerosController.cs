@@ -19,6 +19,7 @@ namespace ColeccionCantaros.Controllers
         // GET: Alfareros
         public ActionResult Index()
         {
+            // TODO QUITAR CONTEXT
             return View(context.Alfareros.ToList());
         }
 
