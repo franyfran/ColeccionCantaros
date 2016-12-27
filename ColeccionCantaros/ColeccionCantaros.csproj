@@ -198,6 +198,7 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\AlfarerosController.cs" />
+    <Compile Include="Controllers\CantarosController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="DAL\CantarosContext.cs" />
@@ -205,6 +206,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Library\AlfareroManager.cs" />
+    <Compile Include="Library\CantaroManager.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Alfarero.cs" />
     <Compile Include="Models\Cantaro.cs" />
@@ -229,6 +231,7 @@
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <None Include="Properties\PublishProfiles\Local.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -278,8 +281,12 @@
     <Content Include="Views\Alfareros\Create.cshtml" />
     <Content Include="Views\Alfareros\Delete.cshtml" />
     <Content Include="Views\Alfareros\Details.cshtml" />
-    <Content Include="Views\Alfareros\Edit.cshtml" />
     <Content Include="Views\Alfareros\Index.cshtml" />
+    <Content Include="Views\Cantaros\Index.cshtml" />
+    <Content Include="Views\Cantaros\Details.cshtml" />
+    <Content Include="Views\Cantaros\Create.cshtml" />
+    <Content Include="Views\Cantaros\Edit.cshtml" />
+    <Content Include="Views\Cantaros\Delete.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

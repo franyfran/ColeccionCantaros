@@ -38,6 +38,48 @@ namespace ColeccionCantaros.App_Start
                     ProvinciaId = 1
                 };
 
+                // Crear objeto cantaro de prueba
+                Cantaro ca = new Cantaro()
+                {
+                    Id = 1,
+                    Codigo = 00001,
+                    NombrePieza = "Cantaro",
+                    FechaCompra = 08/08/2010,
+                    Precio = 150,
+                    DiamBase = 3,
+                    DiamBoca = 3,
+                    CircMaxima = 3,
+                    Altura = 3,
+                    LongCuello = 3,
+                    LongAsa = 3,
+                    AnchoAsa = 3,
+                    LongPitorro = 3,
+                    Base = "av",
+                    FormaCuerpo = "av",
+                    Asa = "av",
+                    AsaNace = "av",
+                    AsaArranque = "av",
+                    AsaInferior = "av",
+                    AsaPegado = "av",
+                    AsaForma = "av",
+                    Cuello = "av",
+                    Boca = "av",
+                    Labio = "av",
+                    Pitorro = "av",
+                    Peso = 23,
+                    Paredes = "av",
+                    Textura = "av",
+                    Color = "av",
+                    Vidriado = "av",
+                    Decoracion = "av",
+                    Tapadera = "av",
+                    AlfareroId = 1
+                };
+
+                // Insertar cantaro en BBDD
+                context.Cantaros.Add(ca);
+                context.SaveChanges(); // Devuelve nยบ de filas modificadas
+
                 // Insertar alfarero en BBDD
                 context.Alfareros.Add(a);
                 context.SaveChanges(); // Devuelve nº de filas modificadas

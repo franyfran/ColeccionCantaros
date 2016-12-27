@@ -47,5 +47,10 @@ namespace ColeccionCantaros.Models
         [ForeignKey("AlfareroId")]
         public Alfarero Alfarero { get; set; }
         public ICollection<Imagen> Imagenes { get; set; }
+
+        public static implicit operator Cantaro(Cantaro v)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

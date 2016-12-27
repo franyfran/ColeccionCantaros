@@ -21,8 +21,8 @@ namespace ColeccionCantaros.DAL
         }
 
         //public DbSet<Usuario> Usuarios { get; set; }
-        public DbSet<Provincia> Provincias { get; set; }
         public DbSet<Comunidad> Comunidades { get; set; }
+        public DbSet<Provincia> Provincias { get; set; }
         public DbSet<Alfarero> Alfareros { get; set; }
         public DbSet<Cantaro> Cantaros { get; set; }
         public DbSet<Imagen> Imagenes { get; set; }
