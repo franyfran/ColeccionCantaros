@@ -44,7 +44,7 @@ namespace ColeccionCantaros.App_Start
                     Id = 1,
                     Codigo = 00001,
                     NombrePieza = "Cantaro",
-                    FechaCompra = 08/08/2010,
+                    FechaCompra = new DateTime(2005, 8, 12),
                     Precio = 150,
                     DiamBase = 3,
                     DiamBoca = 3,
@@ -78,10 +78,10 @@ namespace ColeccionCantaros.App_Start
 
                 // Insertar cantaro en BBDD
                 context.Cantaros.Add(ca);
-                context.SaveChanges(); // Devuelve nยบ de filas modificadas
 
                 // Insertar alfarero en BBDD
                 context.Alfareros.Add(a);
+
                 context.SaveChanges(); // Devuelve nº de filas modificadas
             } catch (Exception)
             {
