@@ -14,13 +14,12 @@ namespace ColeccionCantaros.Controllers
 {
     public class AlfarerosController : Controller
     {
-        private CantarosContext context = new CantarosContext();
+        private AlfareroManager alfareroManager = new AlfareroManager();
 
         // GET: Alfareros
         public ActionResult Index()
         {
-            // TODO QUITAR CONTEXT
-            return View(context.Alfareros.ToList());
+                return View(alfareroManager.GetAll());
         }
 
         // GET: Alfareros/Details/5
@@ -30,7 +29,7 @@ namespace ColeccionCantaros.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Alfarero alfarero = context.Alfareros.Find(id);
+            Alfarero alfarero = alfareroManager.GetById(id.Value); 
             if (alfarero == null)
             {
                 return HttpNotFound();
@@ -53,10 +52,8 @@ namespace ColeccionCantaros.Controllers
         {
             if (ModelState.IsValid)
             {
-                using (var alfareroManager = new AlfareroManager())
-                {
-                    alfareroManager.Insert(alfarero);
-                }
+                alfareroManager.Insert(alfarero);
+                
                 return RedirectToAction("Index");
             }
 
@@ -70,7 +67,7 @@ namespace ColeccionCantaros.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Alfarero alfarero = context.Alfareros.Find(id);
+            Alfarero alfarero = alfareroManager.GetById(id.Value); //Cuando int? id es un objeto no un primitivo, un primitivo nunca se puede comparar con null
             if (alfarero == null)
             {
                 return HttpNotFound();
@@ -83,12 +80,11 @@ namespace ColeccionCantaros.Controllers
         // más información vea http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,Nombre,Apellido")] Alfarero alfarero)
+        public ActionResult Edit([Bind(Include = "Id,Nombre,Apellido,ProvinciaId")] Alfarero alfarero)
         {
             if (ModelState.IsValid)
             {
-                context.Entry(alfarero).State = EntityState.Modified;
-                context.SaveChanges();
+                alfareroManager.Update(alfarero);
                 return RedirectToAction("Index");
             }
             return View(alfarero);
@@ -101,7 +97,7 @@ namespace ColeccionCantaros.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Alfarero alfarero = context.Alfareros.Find(id);
+            Alfarero alfarero = alfareroManager.GetById(id.Value);
             if (alfarero == null)
             {
                 return HttpNotFound();
@@ -114,9 +110,7 @@ namespace ColeccionCantaros.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            Alfarero alfarero = context.Alfareros.Find(id);
-            context.Alfareros.Remove(alfarero);
-            context.SaveChanges();
+            alfareroManager.DeleteById(id);
             return RedirectToAction("Index");
         }
 
@@ -124,7 +118,7 @@ namespace ColeccionCantaros.Controllers
         {
             if (disposing)
             {
-                context.Dispose();
+                alfareroManager.Dispose();
             }
             base.Dispose(disposing);
         }
