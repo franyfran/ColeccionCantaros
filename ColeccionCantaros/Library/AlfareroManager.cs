@@ -38,18 +38,17 @@ namespace ColeccionCantaros.Library
 
             return db.Alfareros.FirstOrDefault(a => a.Id == id);
         }
-
+        
+        public int Update(Alfarero alfarero)
+        {
+            db.Entry(alfarero).State = EntityState.Modified;
+            return db.SaveChanges();
+        }
 
         public int DeleteById(int id)
         {
             Alfarero alfarero = GetById(id);
             db.Alfareros.Remove(alfarero);
-            return db.SaveChanges();
-        }
-
-        public int Update(Alfarero alfarero)
-        {
-            db.Entry(alfarero).State = EntityState.Modified;
             return db.SaveChanges();
         }
 

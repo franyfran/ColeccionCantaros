@@ -29,7 +29,7 @@ namespace ColeccionCantaros.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Alfarero alfarero = alfareroManager.GetById(id.Value); 
+            Alfarero alfarero = alfareroManager.GetById(id.Value); //Cuando int? id es un objeto no un primitivo, un primitivo nunca se puede comparar con null
             if (alfarero == null)
             {
                 return HttpNotFound();

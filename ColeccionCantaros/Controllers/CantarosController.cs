@@ -14,12 +14,12 @@ namespace ColeccionCantaros.Controllers
 {
     public class CantarosController : Controller
     {
-        private CantarosContext context = new CantarosContext();
+        private CantaroManager cantaroManager = new CantaroManager();
 
         // GET: Cantaros
         public ActionResult Index()
         {
-            return View(context.Cantaros.Include(c => c.Alfarero).ToList());
+            return View(cantaroManager.GetAll());
         }
 
         // GET: Cantaros/Details/5
@@ -30,7 +30,7 @@ namespace ColeccionCantaros.Controllers
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
 
-            Cantaro cantaro = context.Cantaros.Find(id);
+            Cantaro cantaro = cantaroManager.GetById(id.Value); //Cuando int? id es un objeto no un primitivo, un primitivo nunca se puede comparar con null
             if (cantaro == null)
             {
                 return HttpNotFound();
@@ -53,10 +53,9 @@ namespace ColeccionCantaros.Controllers
         {
             if (ModelState.IsValid)
             {
-                using (var cantaroManager = new CantaroManager())
-                {
-                    cantaroManager.Insert(cantaro);
-                }
+                
+                cantaroManager.Insert(cantaro);
+                
                 return RedirectToAction("Index");
             }
 
@@ -70,7 +69,7 @@ namespace ColeccionCantaros.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Cantaro cantaro = context.Cantaros.Find(id);
+            Cantaro cantaro = cantaroManager.GetById(id.Value); //Cuando int? id es un objeto no un primitivo, un primitivo nunca se puede comparar con null
             if (cantaro == null)
             {
                 return HttpNotFound();
@@ -87,8 +86,7 @@ namespace ColeccionCantaros.Controllers
         {
             if (ModelState.IsValid)
             {
-                context.Entry(cantaro).State = EntityState.Modified;
-                context.SaveChanges();
+                cantaroManager.Update(cantaro);
                 return RedirectToAction("Index");
             }
             return View(cantaro);
@@ -101,7 +99,7 @@ namespace ColeccionCantaros.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Cantaro cantaro = context.Cantaros.Find(id);
+            Cantaro cantaro = cantaroManager.GetById(id.Value); //Cuando int? id es un objeto no un primitivo, un primitivo nunca se puede comparar con null
             if (cantaro == null)
             {
                 return HttpNotFound();
@@ -114,9 +112,7 @@ namespace ColeccionCantaros.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Delete(int id, FormCollection collection)
         {
-            Cantaro cantaro = context.Cantaros.Find(id);
-            context.Cantaros.Remove(cantaro);
-            context.SaveChanges();
+            cantaroManager.DeleteById(id);
             return RedirectToAction("Index");
         }
 
@@ -124,7 +120,7 @@ namespace ColeccionCantaros.Controllers
         {
             if (disposing)
             {
-                context.Dispose();
+                cantaroManager.Dispose();
             }
             base.Dispose(disposing);
         }
