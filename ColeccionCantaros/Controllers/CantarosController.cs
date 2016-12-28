@@ -19,7 +19,7 @@ namespace ColeccionCantaros.Controllers
         // GET: Cantaros
         public ActionResult Index()
         {
-            return View(context.Cantaros.ToList());
+            return View(context.Cantaros.Include(c => c.Alfarero).ToList());
         }
 
         // GET: Cantaros/Details/5

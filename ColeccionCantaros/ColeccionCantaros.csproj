@@ -287,6 +287,7 @@
     <Content Include="Views\Cantaros\Create.cshtml" />
     <Content Include="Views\Cantaros\Edit.cshtml" />
     <Content Include="Views\Cantaros\Delete.cshtml" />
+    <Content Include="Views\Alfareros\Edit.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
