@@ -26,5 +26,6 @@ namespace ColeccionCantaros.DAL
         public DbSet<Alfarero> Alfareros { get; set; }
         public DbSet<Cantaro> Cantaros { get; set; }
         public DbSet<Imagen> Imagenes { get; set; }
+        public object Posts { get; internal set; }
     }
 }
