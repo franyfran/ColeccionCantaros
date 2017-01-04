@@ -30,7 +30,7 @@ namespace ColeccionCantaros.Library
 
         public IEnumerable<Cantaro> GetAll()
         {
-            return db.Cantaros.ToList();
+            return db.Cantaros.Include("Alfarero").ToList();
         }
 
         public Cantaro GetById(int id)

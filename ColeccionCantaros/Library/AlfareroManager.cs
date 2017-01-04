@@ -30,7 +30,7 @@ namespace ColeccionCantaros.Library
 
         public IEnumerable<Alfarero> GetAll()
         {
-            return db.Alfareros.ToList();
+            return db.Alfareros.Include("Provincia").ToList();
         }
 
         public Alfarero GetById(int id)
