@@ -11,37 +11,98 @@ namespace ColeccionCantaros.Models
     {
         [Key]
         public int Id { get; set; }
-        public int Codigo { get; set; }
-        public string NombrePieza { get; set; }
-        public DateTime FechaCompra { get; set; }
-        public decimal Precio { get; set; }
-        public double DiamBase { get; set; }
-        public double DiamBoca { get; set; }
-        public double CircMaxima { get; set; }
-        public double Altura { get; set; }
-        public double LongCuello { get; set; }
-        public double LongAsa { get; set; }
-        public double AnchoAsa { get; set; }
-        public double LongPitorro { get; set; }
-        public string Base { get; set; }
+		
+		[Required(ErrorMessage = "El número de la ficha es obligatorio")]
+        public int NumeroFicha { get; set; }
+		
+		[Required(AllowEmptyStrings = true, ErrorMessage ="El nombre del cántaro es obligatorio"), StringLength(60)]
+        public string Nombre { get; set; }
+        
+        [StringLength(60)]
+        public string Procedencia { get; set; }
+
+        public DateTime? Comprado { get; set; }
+
+        [StringLength(20)]
+        public string Codigo { get; set; }
+
+        public DateTime? Fecha { get; set; }
+        public decimal? Precio { get; set; }
+
+        [StringLength(60)]
+        public string Firma { get; set; }
+
+        
+        public string OtrosDatos1 { get; set; }
+        public string OtrosDatos2 { get; set; }
+        public double? DiametroBase { get; set; }
+        public double? DiametroBoca { get; set; }
+        public double? CircunferenciaMaxima { get; set; }
+        public double? Altura { get; set; }
+        public double? LargoCuello { get; set; }
+        public double? LargoAsa { get; set; }
+        public double? LargoPitorro { get; set; }
+
+        [StringLength(50)]
+        public string FormaBase { get; set; }
+
+        [StringLength(50)]
         public string FormaCuerpo { get; set; }
-        public string Asa { get; set; }
+
+        [StringLength(50)]
+        public string FormaCuello { get; set; }
+
+        [StringLength(50)]
+        public string FormaBoca { get; set; }
+
+        [StringLength(50)]
+        public string FormaLabio { get; set; }
+
+        [StringLength(50)]
+        public string FormaPitorro { get; set; }
+
+        [StringLength(50)]
+        public string FormaParedes { get; set; }
+
+        [StringLength(50)]
+        public string FormaTextura { get; set; }
+
+        [StringLength(50)]
         public string AsaNace { get; set; }
+
+        [StringLength(50)]
         public string AsaArranque { get; set; }
-        public string AsaInferior { get; set; } 
+
+        [StringLength(50)]
+        public string AsaFinInferior { get; set; }
+
+        [StringLength(50)]
         public string AsaPegado { get; set; }
+
+        [StringLength(50)]
         public string AsaForma { get; set; }
-        public string Cuello { get; set; }
-        public string Boca { get; set; }
-        public string Labio { get; set; }
-        public string Pitorro { get; set; }
-        public decimal Peso { get; set; }
-        public string Paredes { get; set; }
-        public string Textura { get; set; }
-        public string Color { get; set; }
-        public string Vidriado { get; set; }
-        public string Decoracion { get; set; }
+
+        [StringLength(50)]
         public string Tapadera { get; set; }
+
+        public double? TapaderaDiametro { get; set; }
+        public double? TapaderaAltura { get; set; }
+
+        [StringLength(50)]
+        public string TapaderaForma { get; set; }
+
+        [StringLength(50)]
+        public string Color { get; set; }
+
+        [StringLength(50)]
+        public string Vidriado { get; set; }
+
+        [StringLength(50)]
+        public string Decoración { get; set; }
+
+        [StringLength(50)]
+        public string ComentarioPieza { get; set; }
+
         public int AlfareroId { get; set; }
 
         [ForeignKey("AlfareroId")]

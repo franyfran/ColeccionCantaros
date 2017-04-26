@@ -12,7 +12,7 @@ using ColeccionCantaros.Models;
 
 namespace ColeccionCantaros.Controllers
 {
-    [Authorize]
+    //[Authorize(Users = "franrogo1956@gmail.com, victor.feca@yahoo.es")]
     public class AccountController : Controller
     {
         private ApplicationSignInManager _signInManager;

@@ -12,6 +12,38 @@
     <hr />
     <dl class="dl-horizontal">
         <dt>
+            @Html.DisplayNameFor(model => model.NumeroFicha)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NumeroFicha)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Nombre)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Nombre)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Procedencia)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Procedencia)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Comprado)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Comprado)
+        </dd>
+
+        <dt>
             @Html.DisplayNameFor(model => model.Codigo)
         </dt>
 
@@ -20,19 +52,11 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.NombrePieza)
+            @Html.DisplayNameFor(model => model.Fecha)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.NombrePieza)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.FechaCompra)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.FechaCompra)
+            @Html.DisplayFor(model => model.Fecha)
         </dd>
 
         <dt>
@@ -44,27 +68,51 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.DiamBase)
+            @Html.DisplayNameFor(model => model.Firma)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.DiamBase)
+            @Html.DisplayFor(model => model.Firma)
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.DiamBoca)
+            @Html.DisplayNameFor(model => model.OtrosDatos1)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.DiamBoca)
+            @Html.DisplayFor(model => model.OtrosDatos1)
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.CircMaxima)
+            @Html.DisplayNameFor(model => model.OtrosDatos2)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.CircMaxima)
+            @Html.DisplayFor(model => model.OtrosDatos2)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DiametroBase)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DiametroBase)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DiametroBoca)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DiametroBoca)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CircunferenciaMaxima)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CircunferenciaMaxima)
         </dd>
 
         <dt>
@@ -76,43 +124,35 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.LongCuello)
+            @Html.DisplayNameFor(model => model.LargoCuello)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.LongCuello)
+            @Html.DisplayFor(model => model.LargoCuello)
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.LongAsa)
+            @Html.DisplayNameFor(model => model.LargoAsa)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.LongAsa)
+            @Html.DisplayFor(model => model.LargoAsa)
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.AnchoAsa)
+            @Html.DisplayNameFor(model => model.LargoPitorro)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.AnchoAsa)
+            @Html.DisplayFor(model => model.LargoPitorro)
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.LongPitorro)
+            @Html.DisplayNameFor(model => model.FormaBase)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.LongPitorro)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Base)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Base)
+            @Html.DisplayFor(model => model.FormaBase)
         </dd>
 
         <dt>
@@ -124,11 +164,51 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.Asa)
+            @Html.DisplayNameFor(model => model.FormaCuello)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.Asa)
+            @Html.DisplayFor(model => model.FormaCuello)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FormaBoca)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FormaBoca)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FormaLabio)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FormaLabio)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FormaPitorro)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FormaPitorro)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FormaParedes)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FormaParedes)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FormaTextura)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FormaTextura)
         </dd>
 
         <dt>
@@ -148,11 +228,11 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.AsaInferior)
+            @Html.DisplayNameFor(model => model.AsaFinInferior)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.AsaInferior)
+            @Html.DisplayFor(model => model.AsaFinInferior)
         </dd>
 
         <dt>
@@ -172,59 +252,35 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.Cuello)
+            @Html.DisplayNameFor(model => model.Tapadera)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.Cuello)
+            @Html.DisplayFor(model => model.Tapadera)
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.Boca)
+            @Html.DisplayNameFor(model => model.TapaderaDiametro)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.Boca)
+            @Html.DisplayFor(model => model.TapaderaDiametro)
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.Labio)
+            @Html.DisplayNameFor(model => model.TapaderaAltura)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.Labio)
+            @Html.DisplayFor(model => model.TapaderaAltura)
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.Pitorro)
+            @Html.DisplayNameFor(model => model.TapaderaForma)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.Pitorro)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Peso)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Peso)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Paredes)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Paredes)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Textura)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Textura)
+            @Html.DisplayFor(model => model.TapaderaForma)
         </dd>
 
         <dt>
@@ -244,19 +300,19 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.Decoracion)
+            @Html.DisplayNameFor(model => model.Decoración)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.Decoracion)
+            @Html.DisplayFor(model => model.Decoración)
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.Tapadera)
+            @Html.DisplayNameFor(model => model.ComentarioPieza)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.Tapadera)
+            @Html.DisplayFor(model => model.ComentarioPieza)
         </dd>
 
         <dt>
