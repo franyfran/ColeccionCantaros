@@ -12,7 +12,7 @@ using ColeccionCantaros.Models;
 
 namespace ColeccionCantaros.Controllers
 {
-    //[Authorize(Users = "franrogo1956@gmail.com, victor.feca@yahoo.es")]
+    [Authorize(Users = "franrogo1956@gmail.com, victor.feca@yahoo.es")]
     public class AccountController : Controller
     {
         private ApplicationSignInManager _signInManager;
@@ -136,7 +136,7 @@ namespace ColeccionCantaros.Controllers
 
         //
         // GET: /Account/Register
-        [AllowAnonymous]
+        //[AllowAnonymous]
         public ActionResult Register()
         {
             return View();
